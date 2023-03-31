@@ -1,4 +1,4 @@
-############!/data/data/com.termux/files/usr/bin/bash -e
+#!/data/data/com.termux/files/usr/bin/bash -e
 # Copyright ©2018 by RDX_201😈😈. All rights reserved.  🌎 🌍 🌏 🌐 🗺
 #
 #####################################################################
