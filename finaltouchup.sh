@@ -9,14 +9,14 @@ fix_profile() {
 fix_sudo() {
     chmod +s $DESTINATION/usr/bin/sudo
     chmod +s $DESTINATION/usr/bin/su
-    echo "BlackHunter    ALL=(ALL:ALL) ALL" > $DESTINATION/etc/sudoers.d/BlackHunter
+    echo "kali    ALL=(ALL:ALL) ALL" > $DESTINATION/etc/sudoers.d/kali
     echo "Set disable_coredump false" > $DESTINATION/etc/sudo.conf
 }
 
 fix_uid() {
     GID=$(id -g)
-    startBlackHunter -r usermod -u $UID BlackHunter 2>/dev/null
-    startBlackHunter -r groupmod -g $GID BlackHunter 2>/dev/null
+    startkali -r usermod -u $UID kali 2>/dev/null
+    startkali -r groupmod -g $GID kali 2>/dev/null
 }
 
 create_xsession_handler() {
@@ -34,7 +34,7 @@ vnc_start() {
         vnc_passwd
     fi
     USR=\$(whoami)
-    if [ \$USR = "BlackHunter" ]; then
+    if [ \$USR = "root" ]; then
         SCR=:1
     else
         SCR=:2
